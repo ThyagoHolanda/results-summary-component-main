@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightgray;
+    width: 100vw;
+    height: 100vh;
+}
+
+main .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    background-color: #fff;
+
+}
+
+main .content-box {
+    width: 25%;
+    height: 60%;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+main .your-result {
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    border-radius: 10px;
+}
+
+main .summary {
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+}
+
+
+
+/* Atribuição  */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
