@@ -2,7 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;700;800&display=swap');
 
+:root {
+    /* Background Your Result */
+    --your_resultBG: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 
+    /* Background Circle */
+    --cirlceBG: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    /* Summary Background */
+    --reactionBG: hsl(0, 100%, 67%, 0.15);
+    --memoryBG: hsl(39, 100%, 56%, 0.15);
+    --verbalBG: hsl(166, 100%, 37%, 0.15);
+    --visualBG: hsl(234, 85%, 45%, 0.15);
+    /* Summary Color */
+    --reactionTX: hsl(0, 100%, 67%);
+    --memoryTX: hsl(39, 100%, 56%);
+    --verbalTX: hsl(166, 100%, 37%);
+    --visualTX: hsl(234, 85%, 45%);
+}
 
 /* Versão mobile */
 main {
@@ -33,7 +49,7 @@ main .flex-container {
     justify-content: space-evenly;
     align-items: center;
     color: #fff;
-    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    background-image: var(--your_resultBG);
     border-radius: 0 0 30px 30px;
 }
 
@@ -50,7 +66,7 @@ main .flex-container {
     flex-wrap: wrap;
     width: 150px;
     height: 150px;
-    background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    background-image: var(--cirlceBG);
     border-radius: 50%;
 }
 
@@ -67,72 +83,108 @@ main .flex-container {
     text-align: center;
 }
 
+.description h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
 .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3%;
+    width: 100%;
     height: 60%;
 }
 
+.summary h1 {
+    width: 80%;
+    margin-top: 20px;
+}
 
+.type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 8%;
+    padding: 10px;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+}
+
+.reaction {
+    background-color: var(--reactionBG);
+    color: var(--reactionTX);
+}
+
+.memory {
+    background-color: var(--memoryBG);
+    color: var(--memoryTX);
+}
+
+.verbal {
+    background-color: var(--verbalBG);
+    color: var(--verbalTX);
+}
+
+.visual {
+    background-color: var(--visualBG);
+    color: var(--visualTX);
+}
+
+.percen {
+    color: hsla(224, 30%, 27%, 0.486);
+    font-weight: 900;
+}
+
+.percen strong {
+    color: hsl(224, 30%, 27%);
+}
+
+button {
+    width: 80%;
+    padding: 10px 20px;
+    font-weight: 700;
+    background-color: hsl(224, 30%, 27%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.styled-button:hover {
+    background-image: var(--your_resultBG);
+    transform: scale(1.05);
+}
 
 
 /* Versão desktop */
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
     main {
         background-color: lightgray;
     }
 
     main .flex-container {
-        display: flex;
         flex-direction: row;
         width: 80vw;
         height: 80vh;
-        background-color: #fff;
-
     }
 
     .content-box {
         width: 25%;
         height: 60%;
-        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.05);
     }
 
     .your-result {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        color: #fff;
-        background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-        border-radius: 10px;
+        border-radius: 20px;
+        z-index: 2;
     }
 
     .your-result p {
         font-size: 0.8em;
-        color: rgba(255, 255, 255, 0.600);
-    }
-
-    .circle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 150px;
-        height: 150px;
-        background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-        border-radius: 50%;
-    }
-
-    .circle h1 {
-        font-weight: 700;
-        font-size: 3em;
-    }
-
-    .description {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 75%;
-        text-align: center;
     }
 
     .description h2 {
@@ -142,12 +194,16 @@ main .flex-container {
 
 
 
-
-
-
     main .summary {
+        margin-left: -15px;
         background-color: #fff;
         border-radius: 0 10px 10px 0;
+        z-index: 1;
+        border-left: 10px solid #fff;
+    }
+
+    .type {
+        font-size: 0.9em;
     }
 }
 
